@@ -7,7 +7,9 @@
     "react": "^16.4.2",
     "react-autosuggest": "^9.4.0",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "react-transition-group": "^1.2.1",
+    "react-vis": "^1.10.8"
   },
   "scripts": {
     "start": "react-scripts start",

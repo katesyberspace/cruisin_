@@ -1,0 +1,21 @@
+.welcome-appear {
+  opacity: 0.01;
+  transform: translateX(-200px)
+}
+
+.welcome-appear.welcome-appear-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all .5s ease-in;
+}
+
+.directions-appear {
+  opacity: 0.01;
+  transform: translateX(-200px)
+}
+
+.directions-appear.directions-appear-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 1s ease-in;
+}

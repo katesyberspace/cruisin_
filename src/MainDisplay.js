@@ -1,77 +1,161 @@
 import React from 'react'
 import './MainDisplay.css'
+import MainNoData from './MainNoData'
+
 
 function MainDisplay(props) {
-    const countryData = props.data
+    // const clean = (data) => { }
 
+    const countryData = props.data
+    // const { advise: { UA }} = countryData
+    
+    
     if (countryData === null){
       return(
-        <section className="main-no-data">
-          <h1>search for a country to get amazing travel info...</h1>
-        </section>
+        <MainNoData />
       )
     } else {
+
+      const requiredVacs = countryData.vaccinations.filter(vac => vac.message === "Vaccination is recommended for all travelers to this country")
+      
       return (
         <section className="main-data">
           {/* full country name */}
           <h1 className="country-name">{countryData.names.full}</h1>
 
+
           {/* filter and display official languages */}
           <div className="section-wrapper">
             <section className="label">
-              <p>official languages</p>
+              <p>Languages Spoken</p>
             </section>
             <section className="icon">
-              <i className="fas fa-prescription-bottle-alt"></i>
+              <i className="fas fa-comments"></i>
             </section>
             <section className="data">
-              {countryData.language.filter(language => 
-                language.official === "Yes"
-              ).map(language =>
+
+              {countryData.language.map(language =>
                 <p className="language"key={language.language}>{language.language}</p>
               )}
+
+
             </section> 
           </div>
 
+
+
+
+              {/* currency info */}
           <div className="section-wrapper">
             <section className="label">
-              <p>currency</p>
+              <p>Currency</p>
+
             </section>
+
             <section className="icon">
-              <i className="fas fa-prescription-bottle-alt"></i>
+              <i className="fas fa-money-bill"></i>
             </section>
+
+
             <section className="data">
               <p>{countryData.currency.name} ({countryData.currency.code})</p>
-              <p>1.00 USD  = {Number(countryData.currency.rate).toFixed(2)} {countryData.currency.code}  </p> 
-
+              <p>1.00 USD  = {Number(countryData.currency.rate).toFixed(2)} {countryData.currency.code}</p> 
             </section> 
           </div>
 
-          
+              {/* travel advisory */}
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Travel Advisories</p>
+            </section>
 
-          {/* currency */}
-          <div className = 'section-wrapper'>
-            <p><b>currency:</b> {countryData.currency.name} ({countryData.currency.code})</p>
-            <p>1.00 USD  = {Number(countryData.currency.rate).toFixed(2)} {countryData.currency.code}  </p> 
+            <section className="icon">
+              <i className="fas fa-exclamation-triangle"></i>            
+            </section>
+
+            <section className="data">
+              <p>{countryData.advise.UA ? countryData.advise.UA.advise : 'None'}</p>
+            </section> 
           </div>
 
-          {/* emergency */}
-          <h2>calling code: {countryData.telephone.calling_code}</h2>
-          <h2>police: {countryData.telephone.police}</h2>
-          <h2>ambulance: {countryData.telephone.ambulance}</h2>
-          
 
-          {/* drinking water */}
-          <h2>water safety: {countryData.water.short}</h2>
+              {/* telephone call code */}
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Phone Calling Code</p>
+            </section>
+
+            <section className="icon">
+              <i className="fas fa-phone"></i>          
+            </section>
+
+            <section className="data">
+              <p>{countryData.telephone.calling_code}</p>
+            </section> 
+          </div>
+
+            {/* telephone police */}
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Police</p>
+            </section>
+
+            <section className="icon">
+                <i className="fas fa-exclamation-circle"></i>       
+            </section>
+
+            <section className="data">
+              <p>{countryData.telephone.police}</p>
+            </section> 
+          </div>
+
+          {/* water safety */}
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Drinking Water</p>
+
+            </section>
+
+            <section className="icon">
+              <i className="fas fa-tint"></i>    
+            </section>
+
+            <section className="data">
+              {countryData.water.short ? <p>{countryData.water.short}</p> : <p>No data available</p>}
+            </section> 
+          </div>
 
 
           {/* vaccinations */}
-          <i className="fas fa-prescription-bottle-alt"></i>
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Vaccinations Recommended for All Travelers</p>
+            </section>
+
+            <section className="icon">
+              <i className="fas fa-syringe"></i>   
+            </section>
+
+            <section className="data">
+              {requiredVacs.length > 0 ? requiredVacs.map(vac => <p key={vac.name}>{vac.name}</p>) : <p>none</p>}
+            </section> 
+          </div>
 
 
-          {countryData.vaccinations.filter(vac => vac.message === "Vaccination is recommended for all travelers to this country")
-            .map(vac => <p key={vac.name}> {vac.name} </p>)}
+          {/* neighbouring countries */}
+          <div className="section-wrapper">
+            <section className="label">
+              <p>Neighbouring Countries</p>
+            </section>
 
+            <section className="icon">
+              <i className="fas fa-globe-americas"></i>   
+            </section>
+            
+            <section className="data">
+              {countryData.neighbors.length > 0 ? countryData.neighbors.map(n => <p>{n.name}</p>) : <p>none</p>}
+            </section> 
+          </div>
 
         </section>
       )

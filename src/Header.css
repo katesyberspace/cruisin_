@@ -4,13 +4,17 @@
   /* line-height: 6rem; */
   height: 150px;
   padding: 20px 10px;
-  background-color: #274060;
+  background-color: #424874;
 }
 
-h2 {
+h1 {
   font-size: 2rem;
-  color: #FFFD82;
+  color: #cee5f2;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.fa-plane-departure {
+  font-size: 2rem;
 }
 
 .react-autosuggest__container {
@@ -34,7 +38,7 @@ h2 {
   border: 1px solid #aaa;
   border-radius: 4px;
   text-align: center;
-
+  color: #424874;
 }
 
 .react-autosuggest__input--focused {
@@ -63,7 +67,7 @@ h2 {
   font-size: 16px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .react-autosuggest__suggestions-list {

@@ -1104,7 +1104,8 @@ class Header extends React.Component {
 
     return (
       <section className="header">
-        <h2>CRUISIN'</h2>
+        <h1>CRUISIN<i className="fas fa-plane-departure"></i>
+        </h1>
         <Autosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
