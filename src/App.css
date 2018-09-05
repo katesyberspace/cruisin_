@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #EFF1F3;
+  margin: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+

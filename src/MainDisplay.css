@@ -1,0 +1,52 @@
+.main-no-data {
+  background-color: #424B54;
+  height: 100vh;
+}
+
+.main-data {
+  background-color: #424B54;
+  height: 100vh;
+}
+
+.country-name {
+  text-align: center;
+  line-height: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.section-wrapper {
+  position: relative;
+  display:flex;
+  width: 90%;
+  /* justify-content: space-evenly; */
+  background-color: #EFF1F3;
+  margin: 0 auto;
+  color: #274060;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  /* padding: 3px; */
+}
+
+.label {
+  background-color: palegoldenrod;
+  width:50%;
+  text-align: center;
+  padding: 5px;
+}
+
+.data {
+  width: 50%;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.icon {
+  position: absolute;
+  top: 40%;
+  right: 46%; 
+}
+
+i {
+  font-size: 2em;
+}
