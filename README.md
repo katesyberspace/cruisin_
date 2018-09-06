@@ -15,6 +15,6 @@ All you have to do is search for a country through the input field, and just lik
 
 
 
-### Thanks for visitin. :)
+### Thanks for visiting. :)
 
 
