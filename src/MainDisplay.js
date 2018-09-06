@@ -1,6 +1,7 @@
 import React from 'react'
 import './MainDisplay.css'
 import MainNoData from './MainNoData'
+import InfoCard from './InfoCard'
 
 
 function MainDisplay(props) {
@@ -16,151 +17,82 @@ function MainDisplay(props) {
       )
     } else {
 
+      const languages = {
+        label: 'Languages Spoken',
+        icon: 'fas fa-comments',
+        data: countryData.language.length > 0 ? 
+                countryData.language.map(language => 
+                  (<p className="language"key={language.language}>{language.language}</p>)
+                ) 
+                : <p>No Data Available</p>
+      }
+
+      const currency = {
+        label: 'Currency',
+        icon: 'fas fa-money-bill',
+        data: countryData.currency.name !== null ? 
+                <div> <p>{countryData.currency.name} ({countryData.currency.code})</p>
+                      <p>1.00 USD  = {Number(countryData.currency.rate).toFixed(2)} {countryData.currency.code}</p>
+                </div>
+                : <p>No Data Available</p>
+      }
+
+      const travelAdvise = {
+        label: 'Travel Advisories',
+        icon: 'fas fa-exclamation-triangle',
+        data: <p>{countryData.advise.UA ? countryData.advise.UA.advise : 'None'}</p>
+      }
+
+      const callingCode = {
+        label: 'Calling Code',
+        icon: 'fas fa-phone',
+        data: <p>{countryData.telephone.calling_code ? countryData.telephone.calling_code : 'No Data Available'}</p>
+      }
+
+      const police = {
+        label: 'Police',
+        icon: 'fas fa-exclamation-circle',
+        data: <p>{countryData.telephone.police === ''? 'No Data Available' : countryData.telephone.police}</p>
+      }
+
+      const waterSafety = {
+        label: 'Tap Water Safety',
+        icon: 'fas fa-tint',
+        data: <p>{countryData.water.short ? countryData.water.short : 'No Data Available'}</p>
+      }
+
       const requiredVacs = countryData.vaccinations.filter(vac => vac.message === "Vaccination is recommended for all travelers to this country")
-      
+
+      const vaccinations = {
+        label: 'Vaccinations Recommended for All Travelers',
+        icon: 'fas fa-syringe',
+        data: requiredVacs.length > 0 ? requiredVacs.map(vac => <p key={vac.name}>{vac.name}</p>) : <p>None</p>
+      }
+
+      const neighbors = {
+        label: 'Neighbouring Countries',
+        icon: 'fas fa-globe-americas',
+        data: countryData.neighbors.length > 0 ? countryData.neighbors.map(n => <p>{n.name}</p>) : <p>None</p>
+      }
+
+
       return (
-        <section className="main-data">
+        <section className="main-data grid-container">
           {/* full country name */}
           <h1 className="country-name">{countryData.names.full}</h1>
 
-
-          {/* filter and display official languages */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Languages Spoken</p>
-            </section>
-            <section className="icon">
-              <i className="fas fa-comments"></i>
-            </section>
-            <section className="data">
-
-              {countryData.language.map(language =>
-                <p className="language"key={language.language}>{language.language}</p>
-              )}
-
-
-            </section> 
-          </div>
-
-
-
-
-              {/* currency info */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Currency</p>
-
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-money-bill"></i>
-            </section>
-
-
-            <section className="data">
-              <p>{countryData.currency.name} ({countryData.currency.code})</p>
-              <p>1.00 USD  = {Number(countryData.currency.rate).toFixed(2)} {countryData.currency.code}</p> 
-            </section> 
-          </div>
-
-              {/* travel advisory */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Travel Advisories</p>
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-exclamation-triangle"></i>            
-            </section>
-
-            <section className="data">
-              <p>{countryData.advise.UA ? countryData.advise.UA.advise : 'None'}</p>
-            </section> 
-          </div>
-
-
-              {/* telephone call code */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Phone Calling Code</p>
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-phone"></i>          
-            </section>
-
-            <section className="data">
-              <p>{countryData.telephone.calling_code}</p>
-            </section> 
-          </div>
-
-            {/* telephone police */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Police</p>
-            </section>
-
-            <section className="icon">
-                <i className="fas fa-exclamation-circle"></i>       
-            </section>
-
-            <section className="data">
-              <p>{countryData.telephone.police}</p>
-            </section> 
-          </div>
-
-          {/* water safety */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Drinking Water</p>
-
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-tint"></i>    
-            </section>
-
-            <section className="data">
-              {countryData.water.short ? <p>{countryData.water.short}</p> : <p>No data available</p>}
-            </section> 
-          </div>
-
-
-          {/* vaccinations */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Vaccinations Recommended for All Travelers</p>
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-syringe"></i>   
-            </section>
-
-            <section className="data">
-              {requiredVacs.length > 0 ? requiredVacs.map(vac => <p key={vac.name}>{vac.name}</p>) : <p>none</p>}
-            </section> 
-          </div>
-
-
-          {/* neighbouring countries */}
-          <div className="section-wrapper">
-            <section className="label">
-              <p>Neighbouring Countries</p>
-            </section>
-
-            <section className="icon">
-              <i className="fas fa-globe-americas"></i>   
-            </section>
-            
-            <section className="data">
-              {countryData.neighbors.length > 0 ? countryData.neighbors.map(n => <p>{n.name}</p>) : <p>none</p>}
-            </section> 
-          </div>
+          <InfoCard className="languages" card={languages}/>
+          <InfoCard className="currency" card={currency}/>
+          <InfoCard className="travel-advise" card={travelAdvise}/>
+          <InfoCard className="calling-code" card={callingCode}/>
+          <InfoCard className="police" card={police}/>
+          <InfoCard className="water-safety" card={waterSafety}/>
+          <InfoCard className="vaccinations" card={vaccinations}/>
+          <InfoCard className="neighbors" card={neighbors}/>
 
         </section>
       )
     }
-  
 }
 
 export default MainDisplay
