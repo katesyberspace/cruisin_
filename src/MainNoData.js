@@ -1,5 +1,4 @@
 import React from 'react'
-import plane from './plane.svg'
 import { CSSTransitionGroup } from 'react-transition-group'
 import './MainNoData.css'
 

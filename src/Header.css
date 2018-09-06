@@ -1,7 +1,5 @@
 .header {
-  /* display: block; */
   text-align: center;
-  /* line-height: 6rem; */
   height: 150px;
   padding: 20px 10px;
   background-color: #424874;
@@ -18,11 +16,9 @@ h1 {
 }
 
 .react-autosuggest__container {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* text-align: center; */
   align-items: center;
   margin: 0 auto;
   padding-top: 30px;
@@ -56,9 +52,6 @@ h1 {
 
 .react-autosuggest__suggestions-container--open {
   display: block;
-  /* position: absolute; */
-  /* top: 30px; */
-  /* right:57px; */
   width: 240px;
   border: 1px solid #aaa;
   background-color: #fff;

@@ -1,5 +1,5 @@
 {
-  "name": "autosuggest",
+  "name": "cruisin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,13 +8,13 @@
     "react-autosuggest": "^9.4.0",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5",
-    "react-transition-group": "^1.2.1",
-    "react-vis": "^1.10.8"
+    "react-transition-group": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "https://katesyberspace.github.io"
 }

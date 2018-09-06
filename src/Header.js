@@ -1087,7 +1087,6 @@ class Header extends React.Component {
 
   // when a suggestion is selected, send the suggestion to App.js
   onSuggestionSelected = (event, { suggestion })=> {
-    console.log(suggestion.name)
     this.props.handlerFromParent(suggestion)
   }
 
