@@ -6,11 +6,8 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 
 function MainDisplay(props) {
-    // const clean = (data) => { }
 
     const countryData = props.data
-    // const { advise: { UA }} = countryData
-    
     
     if (countryData === null){
       return(
@@ -73,7 +70,7 @@ function MainDisplay(props) {
       const neighbors = {
         label: 'Neighbouring Countries',
         icon: 'fas fa-globe-americas',
-        data: countryData.neighbors.length > 0 ? countryData.neighbors.map(n => <p>{n.name}</p>) : <p>None</p>
+        data: countryData.neighbors.length > 0 ? countryData.neighbors.map(n => <p key={n.name}>{n.name}</p>) : <p>None</p>
       }
 
 
@@ -86,8 +83,9 @@ function MainDisplay(props) {
           <CSSTransitionGroup
             transitionName="country"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
             <h1 key={name} className="country-name"> {name}</h1>
           </CSSTransitionGroup>
@@ -95,74 +93,82 @@ function MainDisplay(props) {
           <CSSTransitionGroup
             transitionName="left"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="languages" card={languages}/>
+            <InfoCard key={name} card={languages}/>
           </CSSTransitionGroup>
           
           <CSSTransitionGroup
             transitionName="right"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="currency" card={currency}/>
+            <InfoCard key={name} card={currency}/>
           </CSSTransitionGroup>
 
           <CSSTransitionGroup
             transitionName="left"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="travel-advise" card={travelAdvise}/>
+            <InfoCard key={name} card={travelAdvise}/>
           </CSSTransitionGroup>
           
           <CSSTransitionGroup
             transitionName="right"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="calling-code" card={callingCode}/>
+            <InfoCard key={name} card={callingCode}/>
           </CSSTransitionGroup>
 
           <CSSTransitionGroup
             transitionName="left"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="police" card={police}/>
+            <InfoCard key={name}  card={police}/>
 
           </CSSTransitionGroup>
           
           <CSSTransitionGroup
             transitionName="right"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="water-safety" card={waterSafety}/>
+            <InfoCard key={name} card={waterSafety}/>
           </CSSTransitionGroup>
 
           <CSSTransitionGroup
             transitionName="left"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}
             transitionLeave={false}>
-            <InfoCard key={name} className="vaccinations" card={vaccinations}/>
+            <InfoCard key={name} card={vaccinations}/>
           </CSSTransitionGroup>
           
           <CSSTransitionGroup
             transitionName="right"
             transitionAppear={true}
-            transitionAppearTimeout={1000}
+            transitionAppearTimeout={2000}
             transitionEnter={true}
+            transitionEnterTimeout={2000}          
             transitionLeave={false}>
-            <InfoCard key={name} className="neighbors" card={neighbors}/>
+            <InfoCard key={name} card={neighbors}/>
           </CSSTransitionGroup>
 
         </section>

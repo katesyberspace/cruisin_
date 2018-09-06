@@ -9,7 +9,6 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      // selected: false,
       countryName: '',
       countryUrl: '',
       data: null
@@ -18,7 +17,6 @@ class App extends Component {
 
   handleDataFromHeader = (data) => {
     // once the data suggestion/query comes from the child component, call the api to get the and store in state
-    console.log(data)
     const url = data.url
     axios.get(url)
     .then(res => {
@@ -35,7 +33,6 @@ class App extends Component {
     .catch(function(err){
       console.log(err)
     })
-
   }
 
 
