@@ -3,7 +3,7 @@
 https://katesyberspace.github.io/cruisin_/
 
 
-The app's purpose is to make it easy for users to get practical information about any country.
+The app's purpose is to make it easy for users to get practical travel information about any country.
 
 All you have to do is search for a country through the input field, and just like that you get all the travel information you need.
 
