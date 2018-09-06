@@ -9,7 +9,7 @@ h2,p {
 }
 
 
-.plane{
+/* .plane{
   animation: animate-plane linear 7s infinite;
   animation-iteration-count: 1;
   transform-origin: 50% 50%;
@@ -76,14 +76,13 @@ h2,p {
   100% {
     -ms-transform:  translate(200px,0px)  rotate(180deg) ;
   }
-}
+} */
 
 
 .main-data {
   background-color: #eff1f3;
   height: 100vh;
 }
-
 
 .country-name {
   text-align: center;
@@ -92,6 +91,87 @@ h2,p {
   font-weight: 100;
   color: #424874;
 }
+
+/* react css transitions group */
+.country-appear {
+  opacity: 0.01;
+}
+
+/* react css transitions group */
+.country-appear.country-appear-active {
+  opacity: 1;
+  transition: all 2s ease-in-out;
+}
+
+/* react css transitions group */
+.country-enter {
+  opacity: 0.01;
+}
+
+/* react css transitions group */
+.country-enter.country-enter-active {
+  opacity: 1;
+  transition: all 2s ease-in-out;
+}
+
+
+/* react css transitions group */
+.left-appear {
+  opacity: 0.01;
+  transform: translateX(-200px);
+}
+
+
+/* react css transitions group */
+.left-appear.left-appear-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-in-out;
+}
+
+/* react css transitions group */
+.left-enter {
+  opacity: 0.01;
+  transform: translateX(-200px)
+}
+
+/* react css transitions group */
+.left-enter.left-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-in-out;
+}
+
+
+/* react css transitions group */
+.right-appear {
+  opacity: 0.01;
+  transform: translateX(200px);
+}
+
+
+/* react css transitions group */
+.right-appear.right-appear-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-in-out;
+}
+
+/* react css transitions group */
+.right-enter {
+  opacity: 0.01;
+  transform: translateX(200px)
+}
+
+/* react css transitions group */
+.right-enter.right-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-in-out;
+}
+
+
+
 
 .section-wrapper {
   position: relative;

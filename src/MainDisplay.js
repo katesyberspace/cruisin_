@@ -2,6 +2,7 @@ import React from 'react'
 import './MainDisplay.css'
 import MainNoData from './MainNoData'
 import InfoCard from './InfoCard'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 
 function MainDisplay(props) {
@@ -76,19 +77,93 @@ function MainDisplay(props) {
       }
 
 
-      return (
-        <section className="main-data grid-container">
-          {/* full country name */}
-          <h1 className="country-name">{countryData.names.full}</h1>
+      const name = countryData.names.name
 
-          <InfoCard className="languages" card={languages}/>
-          <InfoCard className="currency" card={currency}/>
-          <InfoCard className="travel-advise" card={travelAdvise}/>
-          <InfoCard className="calling-code" card={callingCode}/>
-          <InfoCard className="police" card={police}/>
-          <InfoCard className="water-safety" card={waterSafety}/>
-          <InfoCard className="vaccinations" card={vaccinations}/>
-          <InfoCard className="neighbors" card={neighbors}/>
+      return (
+
+
+        <section className="main-data grid-container">
+          <CSSTransitionGroup
+            transitionName="country"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <h1 key={name} className="country-name"> {name}</h1>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="left"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="languages" card={languages}/>
+          </CSSTransitionGroup>
+          
+          <CSSTransitionGroup
+            transitionName="right"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="currency" card={currency}/>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="left"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="travel-advise" card={travelAdvise}/>
+          </CSSTransitionGroup>
+          
+          <CSSTransitionGroup
+            transitionName="right"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="calling-code" card={callingCode}/>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="left"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="police" card={police}/>
+
+          </CSSTransitionGroup>
+          
+          <CSSTransitionGroup
+            transitionName="right"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="water-safety" card={waterSafety}/>
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup
+            transitionName="left"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="vaccinations" card={vaccinations}/>
+          </CSSTransitionGroup>
+          
+          <CSSTransitionGroup
+            transitionName="right"
+            transitionAppear={true}
+            transitionAppearTimeout={1000}
+            transitionEnter={true}
+            transitionLeave={false}>
+            <InfoCard key={name} className="neighbors" card={neighbors}/>
+          </CSSTransitionGroup>
 
         </section>
       )

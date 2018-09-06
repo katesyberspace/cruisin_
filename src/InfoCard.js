@@ -1,4 +1,7 @@
 import React from 'react'
+import { CSSTransitionGroup } from 'react-transition-group'
+import './InfoCard.css'
+
 
 function InfoCard(props) {
 
