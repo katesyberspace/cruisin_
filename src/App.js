@@ -27,7 +27,6 @@ class App extends Component {
       this.setState({
         countryName: data.name,
         countryUrl: data.url,
-        // selected: true
       })
     })
     .catch(function(err){
@@ -39,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* passing header a function as a prop with binds App */}
         <Header handlerFromParent={this.handleDataFromHeader}/>
         <MainDisplay data={this.state.data}/>
       </div>

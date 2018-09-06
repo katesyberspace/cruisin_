@@ -100,8 +100,6 @@ h2,p {
 }
 
 
-
-
 .section-wrapper {
   position: relative;
   display:flex;
@@ -111,7 +109,9 @@ h2,p {
   margin: 0 auto;
   color: #274060;
   margin-bottom: 5px;
+  transition: all ease-in-out 2s;
 }
+
 
 .label {
   background-color: #f88e33;
@@ -147,6 +147,6 @@ i {
 
 @media only screen  and (min-width : 900px) {
   .main-data {
-    width: 60%;
+    width: 60%
   }
 }

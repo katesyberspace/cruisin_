@@ -19,3 +19,78 @@
   transform: translateX(0px);
   transition: all 1s ease-in;
 }
+
+.roller-wrapper {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10%;
+  animation: infinite-spinning 2s ease-in-out infinite 4s;
+}
+
+#roller {
+  font-size: 7em;
+  animation-name: slide, infinite-spinning;
+  animation-duration:  4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes infinite-spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 400px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+
+
+
+@media only screen  and (min-width : 900px) {
+
+  #roller {
+    font-size: 10rem;
+    margin-top: -5%;
+    animation-name: slide, infinite-spinning;
+    animation-duration:  4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes infinite-spinning {
+    0% {
+      transform: rotate(0deg);
+      /* transform: translateX(-200px); */
+    }
+    100% {
+      transform: rotate(360deg);
+      /* transform: translateX(200px); */
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      /* transform: rotate(0deg); */
+      margin-left: 1500px;
+    }
+    100% {
+      /* transform: rotate(360deg); */
+      margin-left: 0px;
+    }
+  }
+
+
+
+}

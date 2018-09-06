@@ -25,6 +25,9 @@ function MainNoData(props){
         <p>Search a country to get practical travel info and you'll be cruising in no time.</p>
      </CSSTransitionGroup>
 
+    <div className="roller-wrapper"><i id="roller" className='fas fa-globe-americas'></i></div>
+
+
     </section>
   )
 }
