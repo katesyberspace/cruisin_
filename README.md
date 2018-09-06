@@ -1,4 +1,4 @@
-#Cruisin
+# Cruisin
 
 
 The app's purpose is to make it easy for users to get practical information about any country.
@@ -6,7 +6,7 @@ The app's purpose is to make it easy for users to get practical information abou
 All you have to do is search for a country through the input field, and just like that you get all the travel information you need.
 
 
-##Technologies Used
+## Technologies Used
 - This app was created with React
 - API calls powered by Axios
 - API provided by https://travelbriefing.org
@@ -15,6 +15,6 @@ All you have to do is search for a country through the input field, and just lik
 
 
 
-###Thanks for visitin. :)
+### Thanks for visitin. :)
 
 
