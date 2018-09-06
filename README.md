@@ -1,5 +1,7 @@
 # Cruisin
 
+https://katesyberspace.github.io/cruisin_/
+
 
 The app's purpose is to make it easy for users to get practical information about any country.
 
